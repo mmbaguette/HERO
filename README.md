@@ -24,7 +24,7 @@ HERO is a mobile application designed to help communities coordinate aid and rep
 
 - **Interactive Map**: View all reported obstacles and assistance requests
 - **Real-time Navigation**: Get driving directions to first aid or ride requests
-- **Route Options**: Multiple route suggestions avoiding reported obstacles
+- **Route Options**: Alternate route suggestions that avoid reported obstacles
 
 ### Weather Map
 
