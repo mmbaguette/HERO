@@ -5,8 +5,6 @@ export const SERVER_URL = `ws://${SERVER_IP}:8080`; // For local development
 
 export const GOOGLE_MAPS_CONFIG = {
   API_KEY: 'YOUR_GOOGLE_MAPS_API_KEY',
-  WEATHER_API_KEY: 'YOUR_WEATHER_API_KEY',
-  GEOCODING_API_KEY: 'YOUR_GEOCODING_API_KEY'
 };
 
 // Admin credentials - Change these in production!
@@ -17,5 +15,4 @@ export const ADMIN_CREDENTIALS = {
 
 export const STRIPE_CONFIG = {
   TEST_SECRET_KEY: 'YOUR_STRIPE_TEST_SECRET_KEY',
-  LIVE_SECRET_KEY: 'YOUR_STRIPE_LIVE_SECRET_KEY'
 }; 

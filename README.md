@@ -93,7 +93,6 @@ npx expo start
 ```
 
 5. Scan the QR code with Expo Go app to run on your device
-
 6. Start the local server
 
 ```bash
@@ -113,13 +112,15 @@ The app requires several configuration values that are kept secure and not commi
    export const SERVER_URL = '...';      // WebSocket server URL
    export const GOOGLE_MAPS_CONFIG = {
      API_KEY: '...',            // Google Maps JavaScript API key
-     WEATHER_API_KEY: '...',    // Weather data API key
-     GEOCODING_API_KEY: '...'   // Geocoding API key
    };
    export const ADMIN_CREDENTIALS = {
      username: '...',           // Admin username
      password: '...'            // Admin password
    };
+
+   export const STRIPE_CONFIG = {
+     TEST_SECRET_KEY: 'YOUR_STRIPE_TEST_SECRET_KEY',
+   }; 
    ```
 
 Note: The actual `config.js` file is excluded from git via `.gitignore` to keep sensitive data secure.
