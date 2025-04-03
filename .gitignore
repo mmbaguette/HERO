@@ -42,3 +42,4 @@ coverage/
 build/
 *.zip
 *.tar.gz
+node_modules

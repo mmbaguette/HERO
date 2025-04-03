@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WebView } from 'react-native-webview';
 import { useVerification } from '../context/VerificationContext';
+import { STRIPE_CONFIG } from '../config';
 
 const VerificationScreen = ({ route, navigation }) => {
   const [loading, setLoading] = useState(false);
@@ -35,7 +36,7 @@ const VerificationScreen = ({ route, navigation }) => {
       const response = await fetch('https://api.stripe.com/v1/identity/verification_sessions', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer sk_test_51R2hlMEDQaSlUQWGaBjch5oXfzOWLuV7dATv4cs25fjg6n2UD33alf135LHkOkybjSEKcOTFfX791NFBfATpNi4300mfR3Qjnr',
+          'Authorization': `Bearer ${STRIPE_CONFIG.TEST_SECRET_KEY}`,
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: 'type=document&options[document][require_matching_selfie]=true',
