@@ -111,7 +111,7 @@ The app requires several configuration values that are kept secure and not commi
    export const SERVER_IP = '...';       // Your local IP for development
    export const SERVER_URL = '...';      // WebSocket server URL
    export const GOOGLE_MAPS_CONFIG = {
-     API_KEY: '...',            // Google Maps JavaScript API key
+     API_KEY: '...'            // Google Maps JavaScript API key
    };
    export const ADMIN_CREDENTIALS = {
      username: '...',           // Admin username
@@ -119,7 +119,7 @@ The app requires several configuration values that are kept secure and not commi
    };
 
    export const STRIPE_CONFIG = {
-     TEST_SECRET_KEY: 'YOUR_STRIPE_TEST_SECRET_KEY',
+     TEST_SECRET_KEY: 'YOUR_STRIPE_TEST_SECRET_KEY'
    }; 
    ```
 
