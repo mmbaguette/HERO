@@ -1,6 +1,12 @@
 # HERO
 
+### Background
+
+This project was developed in a team of five students for an engineering design course project.
+
 **Engineering problem:** How can we keep transportation running in a flood or forest fire?
+
+### Description
 
 HERO is a mobile application designed to help communities coordinate aid and report obstacles during times of need. It allows help seekers to request rides and first aid to help evacuate people who don't have someone else to turn to. Built with React Native, it provides an intuitive interface for both giving and receiving assistance.
 
