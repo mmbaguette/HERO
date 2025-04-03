@@ -39,7 +39,15 @@ export function RideRequestsProvider({ children }) {
             setRideRequests(data.data.rideRequests || []);
           } else if (data.type === 'new_ride_request') {
             console.log('Received new ride request:', data.request);
-            setRideRequests(prev => [...(prev || []), data.request]);
+            setRideRequests(prev => {
+              // Check if request with same ID already exists
+              const exists = prev.some(r => r.id === data.request.id);
+              if (exists) {
+                console.log('Duplicate request received, ignoring:', data.request.id);
+                return prev;
+              }
+              return [...(prev || []), data.request];
+            });
           } else if (data.type === 'ride_request_removed') {
             console.log('Received ride request removal:', data.requestId);
             setRideRequests(prev => prev.filter(request => request.id !== data.requestId));
@@ -100,12 +108,17 @@ export function RideRequestsProvider({ children }) {
     }
 
     if (ws.current && ws.current.readyState === WebSocket.OPEN) {
+      const completeRequest = {
+        id: `temp_${now}`,
+        coordinate: newRequest.coordinate,
+        description: newRequest.description || '',
+        passengers: newRequest.passengers || '1',
+        label: newRequest.label || 'Ride Request'
+      };
+
       const message = {
         type: 'ride_request',
-        coordinate: newRequest.coordinate,
-        description: newRequest.description,
-        passengers: newRequest.passengers,
-        label: newRequest.label
+        ...completeRequest
       };
 
       console.log('Sending new ride request to server:', message);

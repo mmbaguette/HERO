@@ -617,7 +617,7 @@ function GiveAidScreen({ route }) {
                           key={`route-${actualIndex}`}
                           coordinates={route.coordinates}
                           strokeWidth={route.color === ROUTE_COLORS.RECOMMENDED ? 6 : 4}
-                          strokeColor={`${route.color}4D`}
+                          strokeColor={`${route.color}7A`}
                           lineDashPattern={[1]}
                         />
                       );
@@ -1135,7 +1135,7 @@ const styles = StyleSheet.create({
   },
   weatherMapButton: {
     position: 'absolute',
-    top: Platform.OS === 'ios' ? 60 : 40,
+    top: Platform.OS === 'ios' ? 30 : 40,
     right: 20,
     backgroundColor: '#FFFFFF',
     padding: 2,
@@ -1148,7 +1148,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 3,
-    zIndex: 1000,
+    zIndex: 49,
     borderWidth: 1,
     borderColor: '#E0E0E0',
   },

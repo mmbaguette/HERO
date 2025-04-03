@@ -112,6 +112,7 @@ function RequestRideScreen({ route }) {
     }
 
     const newRequest = {
+      id: `temp_${Date.now()}`,
       coordinate: markerLocation,
       description: description.trim(),
       passengers: selectedPassengers,
@@ -126,22 +127,15 @@ function RequestRideScreen({ route }) {
   };
 
   const handleMarkerPress = (request) => {
-    console.log('Marker press detected - Full request object:', request);
-
-    if (!request || !request.id) {
-      console.log('Invalid request object:', request);
-      Alert.alert('Error', 'Could not identify the ride request.');
+    console.log('Marker pressed with request:', request);
+    
+    if (!isAdmin) {
+      console.log('User is not admin');
       return;
     }
 
-    console.log('Admin check:', {
-      isAdmin,
-      userName,
-      userPassword
-    });
-
-    if (!isAdmin) {
-      console.log('Marker press ignored - user is not admin');
+    if (!request || !request.id) {
+      console.log('Invalid request object:', request);
       return;
     }
 
@@ -152,13 +146,12 @@ function RequestRideScreen({ route }) {
         {
           text: 'Cancel',
           style: 'cancel',
-          onPress: () => console.log('Ride request removal cancelled')
         },
         {
           text: 'Remove',
           style: 'destructive',
           onPress: () => {
-            console.log('Attempting to remove ride request:', request.id);
+            console.log('Removing request with ID:', request.id);
             removeRideRequest(request.id);
           }
         }
@@ -196,6 +189,7 @@ function RequestRideScreen({ route }) {
 
             {Array.isArray(rideRequests) && rideRequests.map((request) => {
               if (!request || !request.coordinate) return null;
+              
               return (
                 <Marker
                   key={request.id}

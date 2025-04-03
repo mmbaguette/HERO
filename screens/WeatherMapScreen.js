@@ -77,11 +77,11 @@ function WeatherMapScreen() {
 
     if (value === 0) {
       animationFile = require('../assets/animations/sunny.json');
-    } else if (value >= 1 && value <= 29) {
+    } else if (value > 0 && value <= 2) {
       animationFile = require('../assets/animations/light-rain.json');
-    } else if (value >= 30 && value <= 49) {
+    } else if (value > 2 && value <= 5) {
       animationFile = require('../assets/animations/moderate-rain.json');
-    } else if (value >= 50) {
+    } else if (value > 5) {
       animationFile = require('../assets/animations/heavy-rain.json');
     } else {
       animationFile = require('../assets/animations/sunny.json');
@@ -109,8 +109,8 @@ function WeatherMapScreen() {
 
   const getRiskAreaColor = () => {
     const value = parseFloat(rainfallValue);
-    if (value >= 50) return 'rgba(255, 0, 0, 0.3)';
-    if (value >= 30) return 'rgba(255, 255, 0, 0.3)';
+    if (value >= 5) return 'rgba(255, 0, 0, 0.3)'; //severe flood level
+    if (value >= 4) return 'rgba(255, 255, 0, 0.3)'; //moderate flood level
     return 'transparent';
   };
 
@@ -131,14 +131,15 @@ function WeatherMapScreen() {
           <Marker
             coordinate={selectedLocation}
             title={`${selectedLocation.latitude.toFixed(5)}, ${selectedLocation.longitude.toFixed(5)}`}
+            pinColor="blue"
           />
         )}
-        {parseFloat(rainfallValue) >= 30 && Object.values(RISK_AREAS).map((area, index) => (
+        {parseFloat(rainfallValue) >= 4 && Object.values(RISK_AREAS).map((area, index) => (
           <Polygon
             key={index}
             coordinates={area}
             fillColor={getRiskAreaColor()}
-            strokeColor={parseFloat(rainfallValue) >= 50 ? '#FF0000' : '#FFFF00'}
+            strokeColor={parseFloat(rainfallValue) >= 5 ? '#FF0000' : '#FFFF00'}
             strokeWidth={2}
           />
         ))}
@@ -173,7 +174,7 @@ function WeatherMapScreen() {
               returnKeyType="done"
               onEndEditing={handleRainfallSubmit}
             />
-            <Text style={{marginLeft: 8, color: '#666'}}>mm/day</Text>
+            <Text style={{marginLeft: 8, color: '#666'}}>mm/hr</Text>
           </View>
           {inputError ? <Text style={styles.errorText}>{inputError}</Text> : null}
         </View>
