@@ -42,7 +42,7 @@ HERO is a mobile application designed to help communities coordinate aid and rep
   <img src="assets/screenshots/assistance_hub.jpg" width="200" alt="Assistance Hub">
 </div>
 
-### Hero Response Features
+### Hero Response Features + Western Flood warning email
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
   <img src="assets/screenshots/give_aid_map.jpg" width="200" alt="Give Aid Map">
@@ -55,6 +55,7 @@ HERO is a mobile application designed to help communities coordinate aid and rep
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
   <img src="assets/screenshots/first_aid.png" width="200" alt="Request First Aid">
+  <img src="assets/screenshots/request_ride.jpg" width="200" alt="Request Ride">
   <img src="assets/screenshots/report_obstacles.jpeg" width="200" alt="Report Obstacles">
   <img src="assets/screenshots/community_board.jpg" width="200" alt="Community Board">
 </div>
