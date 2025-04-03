@@ -1,5 +1,9 @@
 {
   "expo": {
+    "permissions": {
+      "android": ["ACCESS_FINE_LOCATION"],
+      "ios": ["NSLocationWhenInUseUsageDescription"]
+    },
     "name": "MyNewApp",
     "slug": "MyNewApp",
     "version": "1.0.0",

@@ -1,0 +1,28 @@
+How to run the app anywhere (with a tunnel):
+- Connect laptop and iPhone to a fast Wi-Fi (preferably not hotspot)
+- sudo npx expo start --tunnel --reset-cache
+- OR npx expo start (must be on same Wi-Fi, preferably hotspot)
+- Then others can connect too. They may have to join your hotspot first, then they can connect to a public network.
+
+
+//NOT NEEDED
+To run the server (and enable live obstacle reporting accross different devices):
+- Make sure all devices, including the computer hosting the server, and all smartphones,
+  are connected to the same Wi-Fi network.
+- Go into config.js, change the SERVER_IP variable to your local IP address 
+  on the Wi-Fi network (ipconfig command or settings)
+- Run server in hero server folder: node server.js
+- It's better to show two terminals with the Expo Go logs on one side, and server.js 
+  on the other
+
+For Android:
+- Install Expo Go from Google Play Store
+- Scan QR code with Expo Go app
+- Or open Expo Go and enter the URL manually
+- Make sure phone is on same network as dev machine
+
+For iOS:
+- Install Expo Go from App Store
+- Open Camera app and scan QR code
+- Tap banner that appears to open in Expo Go
+- Make sure phone is on same network as dev machine

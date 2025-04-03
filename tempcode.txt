@@ -1,0 +1,186 @@
+import React, { useState, useLayoutEffect } from 'react';
+import { View, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { WebView } from 'react-native-webview';
+import { useNavigation } from '@react-navigation/native';
+
+const HomeScreen = () => {
+  const [loading, setLoading] = useState(false);
+  const [verificationUrl, setVerificationUrl] = useState(null);
+  const [isVerificationComplete, setIsVerificationComplete] = useState(false);
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    if (verificationUrl) {
+      navigation.setOptions({
+        headerRight: () => (
+          <TouchableOpacity onPress={handleClose}>
+            <Text style={styles.headerButton}>Close</Text>
+          </TouchableOpacity>
+        ),
+      });
+    } else {
+      navigation.setOptions({
+        headerRight: null,
+      });
+    }
+  }, [verificationUrl, navigation]);
+
+  const initiateVerification = async () => {
+    try {
+      setLoading(true);
+      setIsVerificationComplete(false);
+      
+      const response = await fetch('https://api.stripe.com/v1/identity/verification_sessions', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer sk_test_51R2hlMEDQaSlUQWGaBjch5oXfzOWLuV7dATv4cs25fjg6n2UD33alf135LHkOkybjSEKcOTFfX791NFBfATpNi4300mfR3Qjnr',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'type=document&options[document][require_matching_selfie]=true',
+      });
+
+      const data = await response.json();
+      
+      if (data.url) {
+        setVerificationUrl(data.url);
+      } else {
+        Alert.alert('Error', 'Failed to get verification URL');
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to initiate verification');
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleClose = () => {
+    if (!isVerificationComplete) {
+      Alert.alert(
+        'Verification Incomplete',
+        'Are you sure you want to exit? Your verification is not complete.',
+        [
+          {
+            text: 'Continue Verification',
+            style: 'cancel',
+          },
+          {
+            text: 'Exit',
+            style: 'destructive',
+            onPress: () => {
+              setVerificationUrl(null);
+              Alert.alert('Verification Unsuccessful', 'Please try again when you\'re ready.');
+            },
+          },
+        ]
+      );
+    } else {
+      setVerificationUrl(null);
+    }
+  };
+
+  const handleNavigationStateChange = (navState) => {
+    if (navState.url === 'https://verify.stripe.com/success') {
+      setIsVerificationComplete(true);
+      Alert.alert('Success', 'Verification completed successfully!', [
+        {
+          text: 'OK',
+          onPress: () => setVerificationUrl(null),
+        },
+      ]);
+    }
+  };
+
+  if (verificationUrl) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.webViewContainer}>
+          <WebView 
+            source={{ uri: verificationUrl }}
+            style={styles.webView}
+            onNavigationStateChange={handleNavigationStateChange}
+          />
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.title}>ID Verification</Text>
+        <Text style={styles.description}>
+          Press the button below to start the identity verification process
+        </Text>
+        <TouchableOpacity
+          style={[styles.button, loading && styles.buttonDisabled]}
+          onPress={initiateVerification}
+          disabled={loading}
+        >
+          <Text style={styles.buttonText}>
+            {loading ? 'Loading...' : 'Verify Identity'}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  content: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  description: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 32,
+    color: '#666',
+  },
+  button: {
+    backgroundColor: '#6772e5',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  buttonDisabled: {
+    opacity: 0.7,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  webViewContainer: {
+    flex: 1,
+  },
+  webView: {
+    flex: 1,
+  },
+  headerButton: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+    marginRight: 10,
+  },
+});
+
+export default HomeScreen;

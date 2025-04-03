@@ -1,0 +1,242 @@
+[
+  {
+    "id": "1",
+    "name": "Sarah Chen",
+    "description": "Elderly woman needs help getting groceries and medications. Limited mobility.",
+    "location": {
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    "locationDescription": "Downtown Los Angeles, CA",
+    "markerColor": "#FF5733",
+    "urgency": "medium"
+  },
+  {
+    "id": "2",
+    "name": "James Wilson",
+    "description": "Single father with three children needs assistance with home repairs after storm damage.",
+    "location": {
+      "latitude": 43.0096,
+      "longitude": -81.2737
+    },
+    "locationDescription": "Downtown London, ON",
+    "markerColor": "#33FF57",
+    "urgency": "high"
+  },
+  {
+    "id": "3",
+    "name": "Maria Rodriguez",
+    "description": "Needs transportation to medical appointments twice a week. Uses wheelchair.",
+    "location": {
+      "latitude": 34.0211,
+      "longitude": -118.4937
+    },
+    "locationDescription": "West Los Angeles, CA",
+    "markerColor": "#3357FF",
+    "urgency": "medium"
+  },
+  {
+    "id": "4",
+    "name": "Ahmed Hassan",
+    "description": "Recently arrived refugee family needs help with school supplies and winter clothing.",
+    "location": {
+      "latitude": 43.0082,
+      "longitude": -81.2571
+    },
+    "locationDescription": "East London, ON",
+    "markerColor": "#FF33F5",
+    "urgency": "medium"
+  },
+  {
+    "id": "5",
+    "name": "Eleanor Smith",
+    "description": "Visually impaired person needs assistance with home organization and reading mail.",
+    "location": {
+      "latitude": 51.5074,
+      "longitude": -0.1278
+    },
+    "locationDescription": "Central London, UK",
+    "markerColor": "#33FFF5",
+    "urgency": "low"
+  },
+  {
+    "id": "6",
+    "name": "Robert Kim",
+    "description": "Veteran with PTSD needs help with yard maintenance and minor home repairs.",
+    "location": {
+      "latitude": 34.1478,
+      "longitude": -118.1445
+    },
+    "locationDescription": "East Los Angeles, CA",
+    "markerColor": "#FFD700",
+    "urgency": "medium"
+  },
+  {
+    "id": "7",
+    "name": "Lisa Thompson",
+    "description": "Single mother needs childcare assistance while attending job training program.",
+    "location": {
+      "latitude": 43.0148,
+      "longitude": -81.2849
+    },
+    "locationDescription": "Northwest London, ON",
+    "markerColor": "#9933FF",
+    "urgency": "high"
+  },
+  {
+    "id": "8",
+    "name": "David Patel",
+    "description": "Elderly man needs help with technology setup and basic computer training.",
+    "location": {
+      "latitude": 19.0760,
+      "longitude": 72.8777
+    },
+    "locationDescription": "Mumbai, India",
+    "markerColor": "#FF3366",
+    "urgency": "low"
+  },
+  {
+    "id": "9",
+    "name": "Grace Williams",
+    "description": "Recent surgery recovery - needs assistance with daily tasks and meal preparation.",
+    "location": {
+      "latitude": 34.0825,
+      "longitude": -118.4091
+    },
+    "locationDescription": "Beverly Hills, CA",
+    "markerColor": "#66FF33",
+    "urgency": "high"
+  },
+  {
+    "id": "10",
+    "name": "Michael Johnson",
+    "description": "Lost job due to COVID - needs help with job search and resume writing.",
+    "location": {
+      "latitude": 43.0165,
+      "longitude": -81.2932
+    },
+    "locationDescription": "Southwest London, ON",
+    "markerColor": "#FF8C33",
+    "urgency": "medium"
+  },
+  {
+    "id": "11",
+    "name": "Sofia Martinez",
+    "description": "ESL student needs tutoring help with English language practice.",
+    "location": {
+      "latitude": -34.6037,
+      "longitude": -58.3816
+    },
+    "locationDescription": "Buenos Aires, Argentina",
+    "markerColor": "#33FFBD",
+    "urgency": "low"
+  },
+  {
+    "id": "12",
+    "name": "Thomas Lee",
+    "description": "Needs assistance moving furniture and organizing new apartment after downsizing.",
+    "location": {
+      "latitude": 35.6762,
+      "longitude": 139.6503
+    },
+    "locationDescription": "Tokyo, Japan",
+    "markerColor": "#FF5733",
+    "urgency": "medium"
+  },
+  {
+    "id": "13",
+    "name": "Emma Davis",
+    "description": "International student with disabilities needs help with campus navigation.",
+    "location": {
+      "latitude": 43.0119,
+      "longitude": -81.2624
+    },
+    "locationDescription": "Western University, London, ON",
+    "markerColor": "#3399FF",
+    "urgency": "medium"
+  },
+  {
+    "id": "14",
+    "name": "Carlos Ruiz",
+    "description": "Elderly couple needs help with grocery shopping and basic home maintenance.",
+    "location": {
+      "latitude": 34.0549,
+      "longitude": -118.2426
+    },
+    "locationDescription": "Downtown Los Angeles, CA",
+    "markerColor": "#FF99CC",
+    "urgency": "medium"
+  },
+  {
+    "id": "15",
+    "name": "Aisha Mohammed",
+    "description": "Single parent needs after-school care for two children while working evening shift.",
+    "location": {
+      "latitude": 25.2048,
+      "longitude": 55.2708
+    },
+    "locationDescription": "Dubai, UAE",
+    "markerColor": "#FFCC00",
+    "urgency": "high"
+  },
+  {
+    "id": "16",
+    "name": "John Anderson",
+    "description": "Recovering from stroke - needs help with physical therapy exercises and transportation.",
+    "location": {
+      "latitude": 43.0013,
+      "longitude": -81.2543
+    },
+    "locationDescription": "Southeast London, ON",
+    "markerColor": "#00FF99",
+    "urgency": "high"
+  },
+  {
+    "id": "17",
+    "name": "Nina Patel",
+    "description": "New mother needs support with household tasks and occasional childcare.",
+    "location": {
+      "latitude": 34.0928,
+      "longitude": -118.3287
+    },
+    "locationDescription": "Hollywood, CA",
+    "markerColor": "#9966FF",
+    "urgency": "medium"
+  },
+  {
+    "id": "18",
+    "name": "William Zhang",
+    "description": "International student needs help navigating city services and cultural adaptation.",
+    "location": {
+      "latitude": -33.8688,
+      "longitude": 151.2093
+    },
+    "locationDescription": "Sydney, Australia",
+    "markerColor": "#FF6600",
+    "urgency": "low"
+  },
+  {
+    "id": "19",
+    "name": "Rachel Cohen",
+    "description": "Artist with chronic illness needs studio assistance and art supply organization.",
+    "location": {
+      "latitude": 43.0054,
+      "longitude": -81.2777
+    },
+    "locationDescription": "Central London, ON",
+    "markerColor": "#00CCFF",
+    "urgency": "medium"
+  },
+  {
+    "id": "20",
+    "name": "Kevin O'Brien",
+    "description": "Recently widowed senior needs companionship and help with pet care.",
+    "location": {
+      "latitude": 34.0619,
+      "longitude": -118.3037
+    },
+    "locationDescription": "Mid-Wilshire, Los Angeles, CA",
+    "markerColor": "#FF99FF",
+    "urgency": "medium"
+  }
+] 
