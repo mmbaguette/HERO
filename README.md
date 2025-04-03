@@ -2,7 +2,7 @@
 
 ### Background
 
-This project was developed in a team of five students for an engineering design course project.
+This project was developed in a team of five students for an engineering design course at Western University.
 
 **Engineering problem:** How can we keep transportation running in a flood or forest fire?
 
